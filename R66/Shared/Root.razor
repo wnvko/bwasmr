@@ -7,7 +7,7 @@
 
 <div class="row-layout root-container">
     <IgbNavDrawer Open=true Position="NavDrawerPosition.Relative" class="nav-drawer" root-scope>
-        <IgbNavDrawerItem Active="@IsActive("/root")" @onclick=@(() => NavigationManager.NavigateTo($"/root"))>
+        <IgbNavDrawerItem Active="@IsActive("/root")" @onclick=@(() => NavigationManager.NavigateTo($"root"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -15,7 +15,7 @@
             </span>
             <div slot="content">0. /Root</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/no-params")" @onclick=@(() => NavigationManager.NavigateTo($"/root/no-params"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/no-params")" @onclick=@(() => NavigationManager.NavigateTo($"root/no-params"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -23,7 +23,7 @@
             </span>
             <div slot="content">1. /Root/No params</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/no-params/no-params-1")" @onclick=@(() => NavigationManager.NavigateTo($"/root/no-params/no-params-1"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/no-params/no-params-1")" @onclick=@(() => NavigationManager.NavigateTo($"root/no-params/no-params-1"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -31,7 +31,7 @@
             </span>
             <div slot="content">2. /Root/No params/No params 1</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/no-params/numeric-path-1/860")" @onclick=@(() => NavigationManager.NavigateTo($"/root/no-params/numeric-path-1/860"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/no-params/numeric-path-1/860")" @onclick=@(() => NavigationManager.NavigateTo($"root/no-params/numeric-path-1/860"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -39,7 +39,7 @@
             </span>
             <div slot="content">3. /Root/No params/Numeric Path 1</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/no-params/numeric-path-1")" @onclick=@(() => NavigationManager.NavigateTo($"/root/no-params/numeric-path-1"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/no-params/numeric-path-1")" @onclick=@(() => NavigationManager.NavigateTo($"root/no-params/numeric-path-1"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -55,7 +55,7 @@
             </span>
             <div slot="content">5. /Root/No params/Numeric Query 1</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/no-params/numeric-query-1")" @onclick=@(() => NavigationManager.NavigateTo($"/root/no-params/numeric-query-1?q2=816"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/no-params/numeric-query-1")" @onclick=@(() => NavigationManager.NavigateTo($"root/no-params/numeric-query-1?q2=816"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -63,7 +63,7 @@
             </span>
             <div slot="content">6. /Root/No params/Numeric Query 1 - No</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/no-params/numeric-path-no-value-1/456")" @onclick=@(() => NavigationManager.NavigateTo($"/root/no-params/numeric-path-no-value-1/456"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/no-params/numeric-path-no-value-1/456")" @onclick=@(() => NavigationManager.NavigateTo($"root/no-params/numeric-path-no-value-1/456"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -71,7 +71,7 @@
             </span>
             <div slot="content">7. /Root/No params/Numeric Path no value 1</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path?path1=318"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path?path1=318"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -79,7 +79,7 @@
             </span>
             <div slot="content">8. /Root/Numeric path</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -87,7 +87,7 @@
             </span>
             <div slot="content">9. /Root/Numeric path - no</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/no-params-2")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path/no-params-2?path1=418"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/no-params-2")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path/no-params-2?path1=418"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -95,7 +95,7 @@
             </span>
             <div slot="content">10. /Root/Numeric path/No Params 2</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/no-params-2")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path/no-params-2"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/no-params-2")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path/no-params-2"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -103,7 +103,7 @@
             </span>
             <div slot="content">11. /Root/Numeric path/No Params 2 - no</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/string-path-2")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path/string-path-2?path1=418&path2=test 23"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/string-path-2")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path/string-path-2?path1=418&path2=test 23"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -111,7 +111,7 @@
             </span>
             <div slot="content">12. /Root/Numeric path/String path 2</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/string-path-2")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path/string-path-2?path1={_local}&path2={StateService.Global.Value}"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/string-path-2")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path/string-path-2?path1={_local}&path2={StateService.Global.Value}"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -119,7 +119,7 @@
             </span>
             <div slot="content">13. /Root/Numeric path/String path 2 - bound</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/string-path-2")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path/string-path-2?path2=test 23"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/string-path-2")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path/string-path-2?path2=test 23"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -127,7 +127,7 @@
             </span>
             <div slot="content">14. /Root/Numeric path/String path 2 - no</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/string-query-2")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path/string-query-2?path1=418&q11=849&q21=915"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/string-query-2")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path/string-query-2?path1=418&q11=849&q21=915"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -135,7 +135,7 @@
             </span>
             <div slot="content">15./Root/Numeric path/String Query 2</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/string-query-2")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path/string-query-2?q21=915"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/string-query-2")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path/string-query-2?q21=915"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -143,7 +143,7 @@
             </span>
             <div slot="content">16. /Root/Numeric path/String Query 2 - no</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/string-path-no-value-2/856")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path/string-path-no-value-2/856?path1=418"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/string-path-no-value-2/856")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path/string-path-no-value-2/856?path1=418"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -151,7 +151,7 @@
             </span>
             <div slot="content">17. /Root/Numeric path/String path no value 2</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/string-path-no-value-2/856")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path/string-path-no-value-2/856"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path/string-path-no-value-2/856")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path/string-path-no-value-2/856"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -159,7 +159,7 @@
             </span>
             <div slot="content">18. /Root/Numeric path/String path no value 2 - no</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-query?q12={_local}&q22={StateService.Global.Value}"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-query?q12={_local}&q22={StateService.Global.Value}"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -167,7 +167,7 @@
             </span>
             <div slot="content">19. /Root/Numeric query</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-query?q22=543"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-query?q22=543"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -175,7 +175,7 @@
             </span>
             <div slot="content">20. /Root/Numeric query - no</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/no-params-3")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-query/no-params-3?q12=485&q22=463"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/no-params-3")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-query/no-params-3?q12=485&q22=463"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -183,7 +183,7 @@
             </span>
             <div slot="content">21. /Root/Numeric query/No params 3</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/no-params-3")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-query/no-params-3?q22=456"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/no-params-3")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-query/no-params-3?q22=456"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -191,7 +191,7 @@
             </span>
             <div slot="content">22. /Root/Numeric query/No params 3 - no</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/string-path-3/test 18")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-query/string-path-3/test 18?q12=485&q22=463"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/string-path-3/test 18")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-query/string-path-3/test 18?q12=485&q22=463"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -199,7 +199,7 @@
             </span>
             <div slot="content">23. /Root/Numeric query/String Path 3</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/string-path-3")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-query/string-path-3?q22=463"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/string-path-3")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-query/string-path-3?q22=463"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -207,7 +207,7 @@
             </span>
             <div slot="content">24. /Root/Numeric query/String Path 3 - no</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/numeric-query-3")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-query/numeric-query-3?q12=357&q22=463&q23=1569&q13=6438"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/numeric-query-3")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-query/numeric-query-3?q12=357&q22=463&q23=1569&q13=6438"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -215,7 +215,7 @@
             </span>
             <div slot="content">25. /Root/Numeric query/Numeric query 3</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/numeric-query-3")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-query/numeric-query-3?q22=463&q23=1569"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/numeric-query-3")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-query/numeric-query-3?q22=463&q23=1569"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -223,7 +223,7 @@
             </span>
             <div slot="content">26. /Root/Numeric query/Numeric query 3 - no</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/numeric-path-no-value-3/756")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-query/numeric-path-no-value-3/756?q12=15623&q22=463"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/numeric-path-no-value-3/756")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-query/numeric-path-no-value-3/756?q12=15623&q22=463"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -231,7 +231,7 @@
             </span>
             <div slot="content">27. /Root/Numeric query/Numeric path no value 3</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/numeric-path-no-value-3/756")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-query/numeric-path-no-value-3/756?q22=463"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-query/numeric-path-no-value-3/756")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-query/numeric-path-no-value-3/756?q22=463"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -239,7 +239,7 @@
             </span>
             <div slot="content">28. /Root/Numeric query/Numeric path no value 3 - no</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path-no-value/753")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path-no-value/753"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path-no-value/753")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path-no-value/753"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -247,7 +247,7 @@
             </span>
             <div slot="content">29. /Root/Numeric path no value</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path-no-value/32156/no-params-4")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path-no-value/32156/no-params-4"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path-no-value/32156/no-params-4")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path-no-value/32156/no-params-4"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -255,7 +255,7 @@
             </span>
             <div slot="content">30. /Root/Numeric path no value/No params 4</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path-no-value/753/numeric-path-4/344")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path-no-value/753/numeric-path-4/344"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path-no-value/753/numeric-path-4/344")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path-no-value/753/numeric-path-4/344"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -263,7 +263,7 @@
             </span>
             <div slot="content">31. /Root/Numeric path no value/Numeric path 4</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path-no-value/753/numeric-path-4")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path-no-value/753/numeric-path-4"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path-no-value/753/numeric-path-4")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path-no-value/753/numeric-path-4"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -271,7 +271,7 @@
             </span>
             <div slot="content">32. /Root/Numeric path no value/Numeric path 4 - no</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path-no-value/321/numeric-query-4")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path-no-value/321/numeric-query-4?q24=456&q14=9456"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path-no-value/321/numeric-query-4")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path-no-value/321/numeric-query-4?q24=456&q14=9456"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -279,7 +279,7 @@
             </span>
             <div slot="content">33. /Root/Numeric path no value/Numeric query 4</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path-no-value/321/numeric-query-4")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path-no-value/321/numeric-query-4?q24=456"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path-no-value/321/numeric-query-4")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path-no-value/321/numeric-query-4?q24=456"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -287,7 +287,7 @@
             </span>
             <div slot="content">34. /Root/Numeric path no value/Numeric query 4 - no</div>
         </IgbNavDrawerItem>
-        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path-no-value/753/numeric-path-no-value-4/4546")" @onclick=@(() => NavigationManager.NavigateTo($"/root/numeric-path-no-value/753/numeric-path-no-value-4/4546"))>
+        <IgbNavDrawerItem Active="@IsActive("/root/numeric-path-no-value/753/numeric-path-no-value-4/4546")" @onclick=@(() => NavigationManager.NavigateTo($"root/numeric-path-no-value/753/numeric-path-no-value-4/4546"))>
             <span slot="icon">
                 <span class="material-icons icon">
                     account_circle
@@ -299,7 +299,7 @@
     <div class="view-container">
         @Body
     </div>
-    <IgbDatePicker Label="Date" Outlined=true Change=@(() => NavigationManager.NavigateTo($"/root/numeric-query/numeric-query-3?q12=10&q22=10&q23=10&q13=10")) class="date-picker" root-scope></IgbDatePicker>
+    <IgbDatePicker Label="Date" Outlined=true Change=@(() => NavigationManager.NavigateTo($"root/numeric-query/numeric-query-3?q12=10&q22=10&q23=10&q13=10")) class="date-picker" root-scope></IgbDatePicker>
 </div>
 
 @code {
@@ -308,7 +308,7 @@
     private void clickNavDrawerItem()
     {
         _local = StateService.Global.Value;
-        NavigationManager.NavigateTo($"/root/no-params/numeric-query-1?q1=312&q2=816");
+        NavigationManager.NavigateTo($"root/no-params/numeric-query-1?q1=312&q2=816");
     }
 
     public bool IsActive(string targetPath)
