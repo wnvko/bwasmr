@@ -1,0 +1,36 @@
+@layout No_params
+@page "/root/no-params/numeric-query-1"
+
+@using System.Web
+@inject NavigationManager NavigationManager
+
+<div class="row-layout numeric-query-1-container">
+    <h5 class="h5">
+        Numeric query 1
+    </h5>
+    <h5 class="h5">
+        @Q1
+    </h5>
+    <h5 class="h5">
+        @Q2
+    </h5>
+</div>
+
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public double Q1 { get; set; }
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public double? Q2 { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var queryParams = HttpUtility.ParseQueryString(uri.Query);
+
+        var q1 = queryParams.Get("q1");
+        Q1 = string.IsNullOrEmpty(q1) ? 101 : Convert.ToDouble(q1);
+
+    }
+}

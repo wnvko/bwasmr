@@ -1,0 +1,36 @@
+@layout Numeric_path
+@page "/root/numeric-path/string-query-2"
+
+@using System.Web
+@inject NavigationManager NavigationManager
+
+<div class="row-layout string-query-2-container">
+    <h5 class="h5">
+        String query 2
+    </h5>
+    <h5 class="h5">
+        @Q11
+    </h5>
+    <h5 class="h5">
+        @Q21
+    </h5>
+</div>
+
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public string Q11 { get; set; }
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public string Q21 { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var queryParams = HttpUtility.ParseQueryString(uri.Query);
+
+        var q11 = queryParams.Get("q11");
+        Q11 = string.IsNullOrEmpty(q11) ? "test 2" : q11;
+
+    }
+}

@@ -1,0 +1,22 @@
+.row-layout {
+    display: flex;
+}
+.numeric-query-container {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    height: 100%;
+}
+.h5 {
+    height: max-content;
+    min-width: min-content;
+}
+.view-container {
+    overflow: auto;
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    flex-grow: 1;
+}

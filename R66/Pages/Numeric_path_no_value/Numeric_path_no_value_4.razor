@@ -1,0 +1,30 @@
+@layout Numeric_path_no_value
+@page "/root/numeric-path-no-value/{pathNoValue2:double}/numeric-path-no-value-4/{pathNoValue3:double}"
+
+
+<div class="row-layout numeric-path-no-value-4-container">
+    <h5 class="h5">
+        Numeric path no value 4
+    </h5>
+    <h5 class="h5">
+        @PathNoValue3
+    </h5>
+</div>
+
+@code {
+
+    [CascadingParameter]
+    private RouteData RouteData { get; set; }
+    [Parameter]
+    public double? PathNoValue3 { get; set; }
+    [Parameter]
+    public double PathNoValue2 { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        RouteData.RouteValues.TryGetValue("PathNoValue3", out var pathNoValue3);
+        PathNoValue3 = Convert.ToDouble(pathNoValue3);
+        RouteData.RouteValues.TryGetValue("PathNoValue2", out var pathNoValue2);
+        PathNoValue2 = Convert.ToDouble(pathNoValue2);
+    }
+}

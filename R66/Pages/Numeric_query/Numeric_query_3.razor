@@ -1,0 +1,74 @@
+@layout Numeric_query
+@page "/root/numeric-query/numeric-query-3"
+@page "/root/numeric-query"
+
+@using System.Web
+@inject NavigationManager NavigationManager
+@implements IDisposable
+
+<div class="row-layout numeric-query-3-container">
+    <h5 class="h5">
+        Numeric query 3
+    </h5>
+    <h5 class="h5">
+        @Q13
+    </h5>
+    <h5 class="h5">
+        @Q23
+    </h5>
+</div>
+
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public double? Q23 { get; set; }
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public double Q13 { get; set; }
+    private bool _isComponentActive = false;
+
+    protected override void OnParametersSet()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var queryParams = HttpUtility.ParseQueryString(uri.Query);
+
+        var q13 = queryParams.Get("q13");
+        Q13 = string.IsNullOrEmpty(q13) ? 301 : Convert.ToDouble(q13);
+
+    }
+
+    protected override async Task OnAfterRenderAsync(bool isFirstRender)
+    {
+        if (isFirstRender)
+        {
+            _isComponentActive = true;
+            NavigationManager.LocationChanged += OnLocationChanged;
+            EnsureDefaultRoute();
+        }
+        await base.OnAfterRenderAsync(isFirstRender);
+    }
+
+    public void Dispose()
+    {
+        _isComponentActive = false;
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+
+    protected void OnLocationChanged(object sender, object e)
+    {
+        if (_isComponentActive)
+        {
+            EnsureDefaultRoute();
+        }
+    }
+
+    protected void EnsureDefaultRoute()
+    {
+        var defaultPath = $"/root/numeric-query/numeric-query-3";
+        var currentRoute = "/" + NavigationManager.ToBaseRelativePath(NavigationManager.Uri).Split('?')[0];
+        if (!string.Equals(defaultPath, currentRoute, StringComparison.OrdinalIgnoreCase))
+        {
+            NavigationManager.NavigateTo(defaultPath, replace: true);
+        }
+    }
+}

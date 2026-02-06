@@ -1,0 +1,15 @@
+.row-layout {
+    display: flex;
+}
+.numeric-path-no-value-1-container {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    height: 100%;
+}
+.h5 {
+    height: max-content;
+    min-width: min-content;
+}

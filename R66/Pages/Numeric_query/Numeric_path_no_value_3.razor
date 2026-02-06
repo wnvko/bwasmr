@@ -1,0 +1,26 @@
+@layout Numeric_query
+@page "/root/numeric-query/numeric-path-no-value-3/{pathNoValue1:double}"
+
+
+<div class="row-layout numeric-path-no-value-3-container">
+    <h5 class="h5">
+        Numeric path no value 1
+    </h5>
+    <h5 class="h5">
+        @PathNoValue1
+    </h5>
+</div>
+
+@code {
+
+    [CascadingParameter]
+    private RouteData RouteData { get; set; }
+    [Parameter]
+    public double? PathNoValue1 { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        RouteData.RouteValues.TryGetValue("PathNoValue1", out var pathNoValue1);
+        PathNoValue1 = Convert.ToDouble(pathNoValue1);
+    }
+}

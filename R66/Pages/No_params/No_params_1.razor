@@ -1,0 +1,51 @@
+@layout No_params
+@page "/root/no-params/no-params-1"
+@page "/root/no-params"
+
+@inject NavigationManager NavigationManager
+@implements IDisposable
+
+<div class="row-layout no-params-1-container">
+    <h5 class="h5">
+        No params 1
+    </h5>
+</div>
+
+@code {
+    private bool _isComponentActive = false;
+
+    protected override async Task OnAfterRenderAsync(bool isFirstRender)
+    {
+        if (isFirstRender)
+        {
+            _isComponentActive = true;
+            NavigationManager.LocationChanged += OnLocationChanged;
+            EnsureDefaultRoute();
+        }
+        await base.OnAfterRenderAsync(isFirstRender);
+    }
+
+    public void Dispose()
+    {
+        _isComponentActive = false;
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+
+    protected void OnLocationChanged(object sender, object e)
+    {
+        if (_isComponentActive)
+        {
+            EnsureDefaultRoute();
+        }
+    }
+
+    protected void EnsureDefaultRoute()
+    {
+        var defaultPath = $"/root/no-params/no-params-1";
+        var currentRoute = "/" + NavigationManager.ToBaseRelativePath(NavigationManager.Uri).Split('?')[0];
+        if (!string.Equals(defaultPath, currentRoute, StringComparison.OrdinalIgnoreCase))
+        {
+            NavigationManager.NavigateTo(defaultPath, replace: true);
+        }
+    }
+}

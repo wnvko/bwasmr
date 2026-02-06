@@ -1,0 +1,26 @@
+@layout Numeric_query
+@page "/root/numeric-query/string-path-3/{path3}"
+
+
+<div class="row-layout string-path-3-container">
+    <h5 class="h5">
+        String path 3
+    </h5>
+    <h5 class="h5">
+        @Path3
+    </h5>
+</div>
+
+@code {
+
+    [CascadingParameter]
+    private RouteData RouteData { get; set; }
+    [Parameter]
+    public string Path3 { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        RouteData.RouteValues.TryGetValue("Path3", out var path3);
+        Path3 = path3 != null ? path3.ToString() : "300";
+    }
+}

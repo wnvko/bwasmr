@@ -1,0 +1,38 @@
+@layout Root
+@inherits LayoutComponentBase
+
+@using System.Web
+@inject NavigationManager NavigationManager
+
+<div class="row-layout numeric-query-container">
+    <h5 class="h5">
+        Numeric query 1
+    </h5>
+    <h5 class="h5">
+        @Q12
+    </h5>
+    <h5 class="h5">
+        @Q22
+    </h5>
+    <div class="view-container">
+        @Body
+    </div>
+</div>
+
+@code {
+    public double Q12 { get; set; }
+    public double? Q22 { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var queryParams = HttpUtility.ParseQueryString(uri.Query);
+
+        var q12 = queryParams.Get("q12");
+        Q12 = string.IsNullOrEmpty(q12) ? 30 : Convert.ToDouble(q12);
+
+        var q22 = queryParams.Get("q22");
+        Q22 = string.IsNullOrEmpty(q22) ? null : Convert.ToDouble(q22);
+
+    }
+}

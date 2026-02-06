@@ -1,0 +1,70 @@
+@layout Numeric_path
+@page "/root/numeric-path/string-path-2"
+@page "/root/numeric-path"
+@page "/root"
+@page "/"
+
+@using System.Web
+@inject NavigationManager NavigationManager
+@implements IDisposable
+
+<div class="row-layout string-path-2-container">
+    <h5 class="h5">
+        String path 2
+    </h5>
+    <h5 class="h5">
+        @Path2
+    </h5>
+</div>
+
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public string Path2 { get; set; }
+    private bool _isComponentActive = false;
+
+    protected override void OnParametersSet()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var queryParams = HttpUtility.ParseQueryString(uri.Query);
+
+        var path2 = queryParams.Get("path2");
+        Path2 = string.IsNullOrEmpty(path2) ? "path 2" : path2;
+
+    }
+
+    protected override async Task OnAfterRenderAsync(bool isFirstRender)
+    {
+        if (isFirstRender)
+        {
+            _isComponentActive = true;
+            NavigationManager.LocationChanged += OnLocationChanged;
+            EnsureDefaultRoute();
+        }
+        await base.OnAfterRenderAsync(isFirstRender);
+    }
+
+    public void Dispose()
+    {
+        _isComponentActive = false;
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+
+    protected void OnLocationChanged(object sender, object e)
+    {
+        if (_isComponentActive)
+        {
+            EnsureDefaultRoute();
+        }
+    }
+
+    protected void EnsureDefaultRoute()
+    {
+        var defaultPath = $"/root/numeric-path/string-path-2";
+        var currentRoute = "/" + NavigationManager.ToBaseRelativePath(NavigationManager.Uri).Split('?')[0];
+        if (!string.Equals(defaultPath, currentRoute, StringComparison.OrdinalIgnoreCase))
+        {
+            NavigationManager.NavigateTo(defaultPath, replace: true);
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IgniteUI.Blazor.Trial" Version="25.1.82" />
+    <PackageReference Include="System.Reactive" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Shared/Root.razor.css" CssScope="root-scope" />
+    <None Update="Shared/No_params.razor.css" CssScope="no_params-scope" />
+    <None Update="Pages/No_params/No_params_1.razor.css" CssScope="no_params_1-scope" />
+    <None Update="Pages/No_params/Numeric_path_1.razor.css" CssScope="numeric_path_1-scope" />
+    <None Update="Pages/No_params/Numeric_query_1.razor.css" CssScope="numeric_query_1-scope" />
+    <None Update="Pages/No_params/Numeric_path_no_value_1.razor.css" CssScope="numeric_path_no_value_1-scope" />
+    <None Update="Shared/Numeric_path.razor.css" CssScope="numeric_path-scope" />
+    <None Update="Pages/Numeric_path/No_params_2.razor.css" CssScope="no_params_2-scope" />
+    <None Update="Pages/Numeric_path/String_path_2.razor.css" CssScope="string_path_2-scope" />
+    <None Update="Pages/Numeric_path/String_query_2.razor.css" CssScope="string_query_2-scope" />
+    <None Update="Pages/Numeric_path/String_path_no_value_2.razor.css" CssScope="string_path_no_value_2-scope" />
+    <None Update="Shared/Numeric_query.razor.css" CssScope="numeric_query-scope" />
+    <None Update="Pages/Numeric_query/No_params_3.razor.css" CssScope="no_params_3-scope" />
+    <None Update="Pages/Numeric_query/String_path_3.razor.css" CssScope="string_path_3-scope" />
+    <None Update="Pages/Numeric_query/Numeric_query_3.razor.css" CssScope="numeric_query_3-scope" />
+    <None Update="Pages/Numeric_query/Numeric_path_no_value_3.razor.css" CssScope="numeric_path_no_value_3-scope" />
+    <None Update="Shared/Numeric_path_no_value.razor.css" CssScope="numeric_path_no_value-scope" />
+    <None Update="Pages/Numeric_path_no_value/No_params_4.razor.css" CssScope="no_params_4-scope" />
+    <None Update="Pages/Numeric_path_no_value/Numeric_path_4.razor.css" CssScope="numeric_path_4-scope" />
+    <None Update="Pages/Numeric_path_no_value/Numeric_query_4.razor.css" CssScope="numeric_query_4-scope" />
+    <None Update="Pages/Numeric_path_no_value/Numeric_path_no_value_4.razor.css" CssScope="numeric_path_no_value_4-scope" />
+    <None Update="Pages/Other_root_to_have_it.razor.css" CssScope="other_root_to_have_it-scope" />
+  </ItemGroup>
+
+</Project>

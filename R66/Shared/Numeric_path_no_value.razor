@@ -1,0 +1,28 @@
+@layout Root
+@inherits LayoutComponentBase
+
+
+<div class="row-layout numeric-path-no-value-container">
+    <h5 class="h5">
+        Numeric path no value
+    </h5>
+    <h5 class="h5">
+        @PathNoValue2
+    </h5>
+    <div class="view-container">
+        @Body
+    </div>
+</div>
+
+@code {
+
+    [CascadingParameter]
+    private RouteData RouteData { get; set; }
+    public double? PathNoValue2 { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        RouteData.RouteValues.TryGetValue("PathNoValue2", out var pathNoValue2);
+        PathNoValue2 = Convert.ToDouble(pathNoValue2);
+    }
+}

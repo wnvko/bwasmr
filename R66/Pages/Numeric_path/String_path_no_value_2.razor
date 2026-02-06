@@ -1,0 +1,26 @@
+@layout Numeric_path
+@page "/root/numeric-path/string-path-no-value-2/{pathNoValue}"
+
+
+<div class="row-layout string-path-no-value-2-container">
+    <h5 class="h5">
+        String path no value 2
+    </h5>
+    <h5 class="h5">
+        @PathNoValue
+    </h5>
+</div>
+
+@code {
+
+    [CascadingParameter]
+    private RouteData RouteData { get; set; }
+    [Parameter]
+    public string PathNoValue { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        RouteData.RouteValues.TryGetValue("PathNoValue", out var pathNoValue);
+        PathNoValue = pathNoValue?.ToString();
+    }
+}

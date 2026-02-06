@@ -1,0 +1,31 @@
+@layout Root
+@inherits LayoutComponentBase
+
+@using System.Web
+@inject NavigationManager NavigationManager
+
+<div class="row-layout numeric-path-container">
+    <h5 class="h5">
+        Numeric path
+    </h5>
+    <h5 class="h5">
+        @Path1
+    </h5>
+    <div class="view-container">
+        @Body
+    </div>
+</div>
+
+@code {
+    public double Path1 { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var queryParams = HttpUtility.ParseQueryString(uri.Query);
+
+        var path1 = queryParams.Get("path1");
+        Path1 = string.IsNullOrEmpty(path1) ? 88 : Convert.ToDouble(path1);
+
+    }
+}

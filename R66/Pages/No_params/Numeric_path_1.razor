@@ -1,0 +1,26 @@
+@layout No_params
+@page "/root/no-params/numeric-path-1/{path:double?}"
+
+
+<div class="row-layout numeric-path-1-container">
+    <h5 class="h5">
+        Numeric path 1
+    </h5>
+    <h5 class="h5">
+        @Path
+    </h5>
+</div>
+
+@code {
+
+    [CascadingParameter]
+    private RouteData RouteData { get; set; }
+    [Parameter]
+    public double Path { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        RouteData.RouteValues.TryGetValue("Path", out var path);
+        Path = path != null ? Convert.ToDouble(path) : 100;
+    }
+}

@@ -1,0 +1,43 @@
+@layout Numeric_path_no_value
+@page "/root/numeric-path-no-value/{pathNoValue2:double}/numeric-query-4"
+
+@using System.Web
+@inject NavigationManager NavigationManager
+
+<div class="row-layout numeric-query-4-container">
+    <h5 class="h5">
+        Numeric query 3
+    </h5>
+    <h5 class="h5">
+        @Q14
+    </h5>
+    <h5 class="h5">
+        @Q24
+    </h5>
+</div>
+
+@code {
+
+    [CascadingParameter]
+    private RouteData RouteData { get; set; }
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public double? Q24 { get; set; }
+    [Parameter]
+    [SupplyParameterFromQuery]
+    public double Q14 { get; set; }
+    [Parameter]
+    public double PathNoValue2 { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var queryParams = HttpUtility.ParseQueryString(uri.Query);
+
+        var q14 = queryParams.Get("q14");
+        Q14 = string.IsNullOrEmpty(q14) ? 505 : Convert.ToDouble(q14);
+
+        RouteData.RouteValues.TryGetValue("PathNoValue2", out var pathNoValue2);
+        PathNoValue2 = Convert.ToDouble(pathNoValue2);
+    }
+}
