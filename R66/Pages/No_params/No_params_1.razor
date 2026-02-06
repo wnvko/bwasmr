@@ -45,7 +45,7 @@
         var currentRoute = NavigationManager.ToBaseRelativePath(NavigationManager.Uri).Split('?')[0];
         if (!string.Equals(defaultPath, currentRoute, StringComparison.OrdinalIgnoreCase))
         {
-            NavigationManager.NavigateTo("/" + defaultPath, replace: true);
+            NavigationManager.NavigateTo(defaultPath, replace: true);
         }
     }
 }
